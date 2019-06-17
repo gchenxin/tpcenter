@@ -21,6 +21,7 @@ class OauthAccess extends Model
     }
 
     public function checkToken($token){
+        if(!$token) return false;
         $where[] = ['access_token','=',$token];
         $where[] = ['expires','>=', date('Y-m-d H:i:s',time())];
         $result = $this->where($where)->find();
