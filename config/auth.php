@@ -15,10 +15,12 @@ return [
     'inter_auth'    =>  true,
     //不需要认证的接口列表，只有在开启了接口认证才有用
     'ignore_list'   =>  [
-        'Index/index/index'
+//        'Index/index/index'
     ],
     //认证控制器,需要在middleware中注册中间件别名
     'auth_middleware'   =>  'Auth',
     //跨域处理,允许访问的地址列表
-    'allow_origin'  =>  [],
+    'allow_origin'  =>  [
+        'http://src.com:9002'
+    ],
 ];

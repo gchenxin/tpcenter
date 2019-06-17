@@ -3,18 +3,23 @@
 namespace app\http\middleware;
 
 use Ajax;
+use Oauth;
+
 class Auth
 {
     public function handle($request, \Closure $next)
     {
         //token验证
-        if($this->checkTokenHandler($request)){
-            return $next($request);
+        try{
+            if($this->checkTokenHandler()){
+                return $next($request);
+            }
+        }catch(\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
         }
-        return Ajax::error(999,'access deny!')->toJson();
     }
 
-    public function checkTokenHandler($request){
-        return false;
+    public function checkTokenHandler(){
+        return Oauth::checkUserToken();
     }
 }

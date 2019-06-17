@@ -13,4 +13,37 @@
 
 Facade::bind([
     'app\Facade\AjaxFacade' => 'app\Ajax\Ajax',
+    'app\Facade\AuthTokenFacade' => 'app\Oauth\Oauth',
 ]);
+
+//全局错误码
+//不是授权认证的客户端
+define('NOT_INVALID_CLIENT',1);
+//token认证失败
+define('ERROR_ACCESS',2);
+//sign签名错误
+define('ERROR_SIGN',3);
+//参数错误
+define('ERROR_PARAM',4);
+//拒绝执行
+define('ERROR_DENY',5);
+//操作失败
+define('ERROR_FAIL',6);
+
+/**
+ * 抛出全局异常
+ * @param $code
+ * @throws Exception
+ */
+function throwException($code){
+    $ERROR_MESSAGE = [
+        '',
+        'invalid authorization client!',
+        'access denied!',
+        'sign error!',
+        'params invalid!',
+        'operation denied!',
+        'operation failed!'
+    ];
+    exception($ERROR_MESSAGE[$code],$code);
+}

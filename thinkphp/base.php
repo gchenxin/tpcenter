@@ -49,5 +49,9 @@ Loader::addClassAlias([
     'Url'      => facade\Url::class,
     'Validate' => facade\Validate::class,
     'View'     => facade\View::class,
-    'Ajax'     => \app\Facade\AjaxFacade::class,
 ]);
+
+$alias = require_once __DIR__ . '/../config/alias.php';
+
+Loader::addClassAlias($alias);
+

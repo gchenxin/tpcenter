@@ -13,11 +13,11 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '39.108.236.117',
+    'hostname'        => '47.91.224.141',
     // 数据库名
-    'database'        => 'test',
+    'database'        => 'shops',
     // 用户名
-    'username'        => 'test',
+    'username'        => 'website',
     // 密码
     'password'        => '123456',
     // 端口
