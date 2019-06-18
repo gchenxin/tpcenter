@@ -12,7 +12,7 @@ use think\Controller;
 use Oauth;
 use Ajax;
 
-class Oauth extends Controller
+class Oauthtoken extends Controller
 {
     public function getAccessToken(){
         try{

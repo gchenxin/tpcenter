@@ -83,7 +83,7 @@ class Controller
         //过滤token认证
         $authConfig = config('auth.');
         if($authConfig['inter_auth']){
-            $uri = request()->controller(). '/' . request()->module() . '/' . request()->action();
+            $uri = lcfirst(request()->module()) . '/' . lcfirst(request()->controller(true)). '/' . lcfirst(request()->action(true));
             if(!in_array($uri,$authConfig['ignore_list'])){
                 $this->middleware[] = $authConfig['auth_middleware'];
             }

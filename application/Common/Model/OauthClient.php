@@ -20,6 +20,7 @@ class OauthClient extends Model
     }
 
     public function checkClient($clientId,$clientKey){
+        if(!$clientId || !$clientKey) return null;
         $where['client_id'] = $clientId;
         $where['client_secret'] = $clientKey;
         $where['status'] = 1;

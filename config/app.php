@@ -106,7 +106,7 @@ return [
     'route_annotation'       => false,
     // 域名根，如thinkphp.cn
     'url_domain_root'        => '',
-    // 是否自动转换URL中的控制器和操作名
+    // 是否自动转换URL中的控制器和操作名,控制器true为转换，方法名true为不转换
     'url_convert'            => true,
     // 默认的访问控制器层
     'url_controller_layer'   => 'controller',

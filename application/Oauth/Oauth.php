@@ -25,9 +25,9 @@ class Oauth
     public function __construct(Request $request)
     {
         $param = $request->param();
-        $this->client_id = isset($param['AUTH_USER']) ? $param['AUTH_USER'] : null;
-        $this->client_key = isset($param['AUTH_KEY']) ? $param['AUTH_KEY'] : null;
-        $this->auth_type = isset($param['AUTH_TYPE']) ? $param['AUTH_TYPE'] : null;
+        $this->client_id = isset($param['client_id']) ? $param['client_id'] : null;
+        $this->client_key = isset($param['client_key']) ? $param['client_key'] : null;
+        $this->auth_type = isset($param['auth_type']) ? $param['auth_type'] : null;
         $this->token = isset($param['token']) ? $param['token'] : null;
         $this->refresh_token = isset($param['refresh_token']) ? $param['refresh_token'] : null;
         $this->timestamp = isset($param['timestamp']) ? $param['timestamp'] : null;
