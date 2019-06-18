@@ -32,4 +32,6 @@ class Oauthtoken extends Controller
             return Ajax::error($e->getCode(),$e->getMessage())->toJson();
         }
     }
+
+
 }

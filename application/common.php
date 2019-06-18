@@ -40,13 +40,13 @@ define('ERROR_FAIL',7);
 function throwException($code){
     $ERROR_MESSAGE = [
         '',
-        'invalid authorization client!',
-        'access denied!',
-        'sign error!',
-        'refresh token invalid!',
-        'params invalid!',
-        'operation denied!',
-        'operation failed!'
+        'invalid authorization client! - 未授权的应用！',
+        'access denied! - token验证错误！',
+        'sign error! - 签名错误！',
+        'refresh token invalid! - refresh token验证错误！',
+        'params invalid! - 参数格式错误！',
+        'operation denied! - 拒绝执行！',
+        'operation failed! - 操作失败！'
     ];
     exception($ERROR_MESSAGE[$code],$code);
 }
