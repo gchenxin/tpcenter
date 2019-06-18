@@ -17,6 +17,7 @@ return [
     'ignore_list'   =>  [
 //        'index/index/index',
         'index/oauthtoken/getAccessToken',
+        'index/oauthtoken/refreshToken',
     ],
     //认证控制器,需要在middleware中注册中间件别名
     'auth_middleware'   =>  'Auth',

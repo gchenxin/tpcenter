@@ -29,6 +29,7 @@ class OauthAccess extends Model
     }
 
     public function setAccessToken($clientId,$userId,$token,$scope,$expire){
+        $this->removeAccessToken($clientId);
         $data = [
             'access_token'  =>  $token,
             'client_id' =>  $clientId,
@@ -38,4 +39,10 @@ class OauthAccess extends Model
         ];
         return $this->save($data);
     }
+
+    protected function removeAccessToken($clientId){
+        $where['client_id'] = $clientId;
+        $this->where($where)->delete();
+    }
+
 }

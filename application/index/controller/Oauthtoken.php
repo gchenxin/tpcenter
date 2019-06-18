@@ -23,4 +23,13 @@ class Oauthtoken extends Controller
         }
 
     }
+
+    public function refreshToken(){
+        try{
+            $result = Oauth::refreshToken();
+            return Ajax::success($result)->toJson();
+        }catch(\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
+    }
 }

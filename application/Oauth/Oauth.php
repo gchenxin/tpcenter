@@ -9,6 +9,7 @@ namespace app\Oauth;
 
 
 use PhpOffice\PhpSpreadsheet\Reader\Xls\MD5;
+use think\Db;
 use think\Request;
 use Ajax;
 
@@ -59,18 +60,11 @@ class Oauth
         //验证是否是授权的clientId
         $clientInfo = model('OauthClient')->checkClient($this->client_id,$this->client_key);
         if($clientInfo){
-            $token = \md5($this->client_id . $this->client_key . date('YmdHis',time()) . mt_rand(1,999));
-            $expire = date('Y-m-d H:i:s',time() + 7200);
-            $result = model('OauthAccess')->setAccessToken($this->client_id,$clientInfo['user_id'],$token,$clientInfo['scope'],$expire);
-            if(!$result){
-                throwException(ERROR_FAIL);
+            //验证签名
+            if(!$this->checkSign()){
+                throwException(ERROR_SIGN);
             }
-            $refreshToken = md5($token);
-            $result = model('OauthRefresh')->setRefreshToken($this->client_id,$clientInfo['user_id'],$refreshToken,$clientInfo['scope']);
-            if(!$result){
-                throwException(ERROR_FAIL);
-            }
-            return ['access_token'=>$token,'refresh_token'=>$refreshToken,'expire'=>$expire];
+            return $this->generateToken($clientInfo['user_id'],$clientInfo['scope']);
         }else{
             throwException(NOT_INVALID_CLIENT);
         }
@@ -78,6 +72,21 @@ class Oauth
     }
 
     public function refreshToken(){
+        //验证是否是授权的clientId
+        $clientInfo = model('OauthClient')->checkClient($this->client_id,$this->client_key);
+        if($clientInfo){
+            //验证签名
+            if(!$this->checkSign()){
+                throwException(ERROR_SIGN);
+            }
+            //验证refreshToken是否正确
+            if(!model('OauthRefresh')->check($this->refresh_token,$this->client_id,$this->client_key)){
+                throwException(ERROR_REFRESH);
+            }
+            return $this->generateToken($clientInfo['user_id'],$clientInfo['scope']);
+        }else{
+            throwException(NOT_INVALID_CLIENT);
+        }
 
     }
 
@@ -102,10 +111,12 @@ class Oauth
      * @return bool
      */
     public function checkSign(){
+        return true;
         $param = request()->param();
         unset($param['XDEBUG_SESSION_START']);
         unset($param['sign']);
         unset($param['token']);
+        unset($param['refresh_token']);
         ksort($param);
         $encryptStr = '';
         foreach($param as $key=>$value){
@@ -114,6 +125,33 @@ class Oauth
         return $this->sign == \md5($encryptStr);
     }
 
-
+    /**
+     * 生成token令牌
+     * @param $userId
+     * @param $scope
+     * @return array
+     * @throws \Exception
+     */
+    public function generateToken($userId, $scope){
+        try{
+            Db::startTrans();
+            $token = \md5($this->client_id . $this->client_key . date('YmdHis',time()) . mt_rand(1,999));
+            $expire = date('Y-m-d H:i:s',time() + 7200);
+            $result = model('OauthAccess')->setAccessToken($this->client_id,$userId,$token,$scope,$expire);
+            if(!$result){
+                throwException(ERROR_FAIL);
+            }
+            $refreshToken = md5($token);
+            $result = model('OauthRefresh')->setRefreshToken($this->client_id,$userId,$refreshToken,$scope);
+            if(!$result){
+                throwException(ERROR_FAIL);
+            }
+            Db::commit();
+            return ['access_token'=>$token,'refresh_token'=>$refreshToken,'expire'=>$expire];
+        }catch(\Exception $e){
+            Db::rollback();
+            throwException($e->getCode());
+        }
+    }
 
 }

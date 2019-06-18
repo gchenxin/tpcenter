@@ -23,12 +23,14 @@ define('NOT_INVALID_CLIENT',1);
 define('ERROR_ACCESS',2);
 //sign签名错误
 define('ERROR_SIGN',3);
+//refresh token验证失败
+define('ERROR_REFRESH',4);
 //参数错误
-define('ERROR_PARAM',4);
+define('ERROR_PARAM',5);
 //拒绝执行
-define('ERROR_DENY',5);
+define('ERROR_DENY',6);
 //操作失败
-define('ERROR_FAIL',6);
+define('ERROR_FAIL',7);
 
 /**
  * 抛出全局异常
@@ -41,6 +43,7 @@ function throwException($code){
         'invalid authorization client!',
         'access denied!',
         'sign error!',
+        'refresh token invalid!',
         'params invalid!',
         'operation denied!',
         'operation failed!'

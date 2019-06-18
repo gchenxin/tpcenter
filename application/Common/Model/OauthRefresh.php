@@ -19,6 +19,7 @@ class OauthRefresh extends Model
     }
 
     public function setRefreshToken($clientId,$userId,$refreshToken,$scope){
+        $this->removeRefreshToken($clientId);
         $data = [
             'refresh_token' => $refreshToken,
             'client_id' =>  $clientId,
@@ -27,5 +28,18 @@ class OauthRefresh extends Model
             'scope' =>  $scope
         ];
         return $this->save($data);
+    }
+
+    public function removeRefreshToken($clientId){
+        $where['client_id'] = $clientId;
+        $this->where($where)->delete();
+    }
+
+    public function check($refresh,$clientId,$clientKey){
+        $where['rt.refresh_token'] = $refresh;
+        $where['rt.client_id'] = $clientId;
+        $where['c.client_secret'] = $clientKey;
+        $result = $this->alias('rt')->join('oauth_clients c','rt.client_id=c.client_id')->where($where)->find();
+        return $result ? true : false;
     }
 }
