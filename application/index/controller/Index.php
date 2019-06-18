@@ -7,13 +7,14 @@ use think\Controller;
 
 class Index extends Controller
 {
-
+//    protected $middleware = ['Check'];
     public function index()
     {
         return Ajax::success()->toJson();
     }
 
-    public function hello($name = 'ThinkPHP5')
+    //不需要验证token的测试方法
+    public function test($name = 'ThinkPHP5')
     {
         return 'hello,' . $name;
     }

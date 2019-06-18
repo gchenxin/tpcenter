@@ -33,5 +33,9 @@ class Oauthtoken extends Controller
         }
     }
 
+    public function oauthLogin(){
+
+    }
+
 
 }
