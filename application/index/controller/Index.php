@@ -10,7 +10,10 @@ class Index extends Controller
 //    protected $middleware = ['Check'];
     public function index()
     {
-        return Ajax::success()->toJson();
+        $test = [
+            ['pro'=>1,'tt'=>'fgh']
+        ];
+        dump(json_encode($test));
     }
 
     //不需要验证token的测试方法
