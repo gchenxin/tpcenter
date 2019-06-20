@@ -8,7 +8,7 @@ class Login extends Controller
 {
     protected $middleware = ['Check'];
 
-    //微信公众号登录入口
+    //微信公众号登录入口 先不做授权登录
     public function gzhEntrance(){
         $logic = logic('WechatBLL');
         $token_url = $logic->getAuthorizeUrl('snsapi_base');

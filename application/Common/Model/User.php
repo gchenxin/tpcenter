@@ -14,4 +14,11 @@ class User extends Model
     public function checkUser($userId){
         return $this->get($userId);
     }
+
+    public function addItems($mobile,$password){
+        $data = [
+            'Username'  =>  $mobile,
+            'Userpassword'  =>
+        ];
+    }
 }
