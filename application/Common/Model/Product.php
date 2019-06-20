@@ -12,7 +12,15 @@ class Product extends Model
         parent::__construct($data);
     }
 
-    public function checkGoods($productId){
+    public function checkProduct($productId){
         return $this->get($productId);
+    }
+
+    public function getProductInfo($pId){
+        return $this->get($pId);
+    }
+
+    public function addItem($item){
+        //
     }
 }

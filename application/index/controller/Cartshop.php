@@ -72,15 +72,19 @@ class Cartshop extends Controller {
         }
     }
 
-
-
     /**
      * 删除指定资源
      *
      * @param  int $id
      * @return \think\Response
      */
-    public function delete($id) {
+    public function delete($cartId) {
         //
+        try{
+            $cartShopList = model('CartShop')->remove($cartId);
+            return Ajax::success($cartShopList)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
     }
 }

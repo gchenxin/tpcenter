@@ -31,7 +31,7 @@ class CartShop extends Model {
         $addData = [];
         $update = [];
         foreach($items as $item){
-            if(!(model('Goods')->checkGoods($item['GoodsId'])) || !(model('Product')->checkGoods($item['ProductId']))){
+            if(!(model('Goods')->checkGoods($item['GoodsId'])) || !(model('Product')->checkProduct($item['ProductId']))){
                 throwException(ERROR_PARAM);
             }
             $where['userId'] = $userId;
@@ -73,17 +73,23 @@ class CartShop extends Model {
     }
 
     public function saveItems($cartId,$buyCount,$isSelect,$modify){
-        if(!($this->get($cartId))){
+        $cartInfo = $this->get($cartId);
+        if(!$cartInfo){
             throwException(ERROR_PARAM);
         }
+        if(!$buyCount && !$isSelect) throwException(ERROR_PARAM);
         if($buyCount){
             if($modify) {
-                $this->BuyCount += $buyCount;
+                $cartInfo->BuyCount += $buyCount;
             }else{
-                $this->BuyCount = $buyCount;
+                $cartInfo->BuyCount = $buyCount;
             }
         }
-        if($isSelect) $this->isSelect = $isSelect;
-        return $this->save();
+        if($isSelect) $cartInfo->isSelect = $isSelect;
+        return $cartInfo->save();
+    }
+
+    public function remove($cartId){
+        return $this->destroy($cartId);
     }
 }
