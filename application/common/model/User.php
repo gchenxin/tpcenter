@@ -8,6 +8,7 @@ class User extends Model
     protected $table = 'USR_User';
     public function __construct($data = []) {
         parent::__construct($data);
+	$this->autoWriteTimestamp = false;
     }
 
     public function checkUser($userId){
@@ -28,22 +29,65 @@ class User extends Model
 	return $this->save($data);
     }
 
-    public function getUserInfoByMobile($mobile){
+    public function getUserFieldsByMobile($mobile){
     	$where['Mobile'] = $mobile;
 	return $this->where($where)->find();
     }
 
-    public function getUserInfo($userId, $field = '*'){
-	    return $this->field($field)->get($userId);
+    public function getUserFields($userId, $field = '*'){
+	$result = $this->field($field)->get($userId);
+	if($result) $result = $result->toArray();
+	return $result;
     }
 
     public function modifyItem($userId,$item){
     	$item = json_decode($item,true);
-	$userInfo = $this->getUserInfo($userId);
+	$userInfo = $this->getUserFields($userId,'id,Username,Usersex,Useremail,Realname');
 	if(!$userInfo){
 		throwException(ERROE_PARAM);
 	}
 	$userInfo = array_merge($userInfo,$item);
-	return $userInfo;
+	return $this->allowField('Username,Usersex,Useremail,Realname')->isUpdate(true)->save($userInfo);
+    }
+
+    public function authorize($userId,$password){
+    	$userInfo = $this->getUserFields($userId);
+    	if(!$userInfo){
+		throwException(ERROR_PARAM);
+	}elseif(!password_verify($password,$userInfo['Userpassword'])){
+		throwException(ERROR_VERIFY);
+	}else{
+		return true;
+	}
+    }
+
+    public function getUserInfo($userId){
+    	return $this->get($userId);
+    }
+
+    public function setPassword($userId,$password,$newPassword){
+	$userInfo = $this->getUserInfo($userId);
+	if(!$userInfo)	throwException(ERROR_PARAM);
+	elseif(!password_verify($password,$userInfo->Userpassword)) throwException(ERROR_VERIFY);
+	$userInfo->Userpassword = password_hash(substr(md5($password),10,15),PASSWORD_BCRYPT);
+	return $userInfo->save();
+    }
+
+    public function disable($userId,$value){
+    	$userInfo = $this->getUserInfo($userId);
+	if($userInfo){
+		$userInfo->Disabled = $value;
+		return $userInfo->save();
+	}
+	throwException(ERROR_PARAM);
+    }
+    
+    public function recycle($userId,$value){
+    	$userInfo = $this->getUserInfo($userId);
+	if($userInfo){
+		$userInfo->Deleted = $value;
+		return $userInfo->save();
+	}
+	throwException(ERROR_PARAM);
     }
 }

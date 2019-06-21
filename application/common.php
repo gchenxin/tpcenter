@@ -31,6 +31,9 @@ define('ERROR_PARAM',5);
 define('ERROR_DENY',6);
 //操作失败
 define('ERROR_FAIL',7);
+//验证失败
+define('ERROR_VERIFY',8);
+
 
 /**
  * 抛出全局异常
@@ -46,7 +49,8 @@ function throwException($code){
         'refresh token invalid! - refresh token验证错误！',
         'params invalid! - 参数格式错误！',
         'operation denied! - 拒绝执行！',
-        'operation failed! - 操作失败！'
+        'operation failed! - 操作失败！',
+	'verify failed! - 验证失败！'
     ];
     exception($ERROR_MESSAGE[$code],$code);
 }

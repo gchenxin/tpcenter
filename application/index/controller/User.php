@@ -39,4 +39,40 @@ class User extends Controller{
             return Ajax::error($e->getCode(),$e->getMessage())->toJson();
         }
     }
+
+    public function disable($userId){
+    	try{
+            $userModId = model('User')->disable($userId,0);
+            return Ajax::success($userModId)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
+    }
+
+    public function active($userId){
+    	try{
+            $userModId = model('User')->disable($userId,1);
+            return Ajax::success($userModId)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
+    }
+
+    public function deleted($userId){
+    	try{
+            $userModId = model('User')->recycle($userId,1);
+            return Ajax::success($userModId)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
+    }
+
+    public function recovery($userId,0){
+    	try{
+            $userModId = model('User')->recycle($userId,$item);
+            return Ajax::success($userModId)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
+    }
 }
