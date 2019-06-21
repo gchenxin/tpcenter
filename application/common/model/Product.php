@@ -23,4 +23,10 @@ class Product extends Model
     public function addItem($item){
         //
     }
+
+    public function getProductProperty($productId){
+	$productInfo = $this->getProductInfo($productId);
+	$property = json_decode($productInfo['props'],true);
+	return $property;
+    }
 }
