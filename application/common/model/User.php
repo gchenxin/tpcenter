@@ -15,10 +15,13 @@ class User extends Model
         return $this->get($userId);
     }
 
-    public function addItems($mobile,$password){
+    public function addItem($mobile,$password){
         $data = [
-            'Username'  =>  $mobile,
-            'Userpassword'  =>
+            'Username'  	=>	$mobile,
+            'Userpassword'  	=>	$password,
+	    'Mobile'		=>	$mobile,
+	    'Regdate'		=>	date('Y-m-d H:i:s',time()),
         ];
+	return $this->save($data);
     }
 }

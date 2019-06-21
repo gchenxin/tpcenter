@@ -8,7 +8,7 @@
 namespace app\index\controller;
 
 use think\Controller;
-
+use Ajax;
 class Register extends Controller{
 
     public function create($mobile,$password){
