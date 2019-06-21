@@ -33,8 +33,8 @@ class User extends Controller{
 
     public function modify($userId,$item){
     	try{
-            $userIntId = model('User')->modifyItem($mobile,$item);
-            return Ajax::success($userIntId)->toJson();
+            $userModId = model('User')->modifyItem($userId,$item);
+            return Ajax::success($userModId)->toJson();
         }catch (\Exception $e){
             return Ajax::error($e->getCode(),$e->getMessage())->toJson();
         }

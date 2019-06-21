@@ -3,11 +3,11 @@ namespace app\common\validate;
 
 use think\Validate;
 
-class User extends Validate{
+class UserValidate extends Validate{
 	protected $rules = [
-		'Username'	=>	'unique|require',
+		'Username'	=>	'unique:USR_User|require',
 		'Useremail'	=>	'email',
-		'Mobile'	=>	'unique|require'
+		'Mobile'	=>	'unique:USR_User|require'
 	];
 	protected $failException = true;
 

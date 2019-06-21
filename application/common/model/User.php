@@ -22,13 +22,24 @@ class User extends Model
 	    'Mobile'		=>	$mobile,
 	    'Regdate'		=>	date('Y-m-d H:i:s',time()),
         ];
-	$this->validate($data,'app\common\validate\User');
+	if($this->getUserInfoByMobile($mobile)){
+		throwException(ERROR_PARAM);
+	}
 	return $this->save($data);
+    }
+
+    public function getUserInfoByMobile($mobile){
+    	$where['Mobile'] = $mobile;
+	return $this->where($where)->find();
+    }
+
+    public function getUserInfo($userId, $field = '*'){
+	    return $this->field($field)->get($userId);
     }
 
     public function modifyItem($userId,$item){
     	$item = json_decode($item,true);
-	$userInfo = $this->get($userId);
+	$userInfo = $this->getUserInfo($userId);
 	if(!$userInfo){
 		throwException(ERROE_PARAM);
 	}
