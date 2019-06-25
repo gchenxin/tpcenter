@@ -4,7 +4,7 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Request;
-
+use Ajax;
 class Product extends Controller
 {
     /**
@@ -12,9 +12,36 @@ class Product extends Controller
      *
      * @return \think\Response
      */
-    public function index()
+    public function getProductList(){Request $request}
     {
-        //
+	$keywords = input('keywords');
+	$className = input('className');
+	$lastest = input('lastest');
+	$priceRange = input('priceRange');
+        try{
+	    $productList = model('Product')->getProductList($keywords,$className,$lastest,$priceRange,$request->page,$request->limit);
+            return Ajax::success($productList)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }
+    }
+
+    public function getProductClass(){
+	try{
+            $classList = model('ProductClass')->getClassList();
+            return Ajax::success($classList)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }    
+    }
+
+    public function getSkuInfo($goodsId,$productId){
+	try{
+            $info = model('Stock')->getSkuInfo($goodsId,$productId);
+            return Ajax::success($info)->toJson();
+        }catch (\Exception $e){
+            return Ajax::error($e->getCode(),$e->getMessage())->toJson();
+        }    
     }
 
     /**

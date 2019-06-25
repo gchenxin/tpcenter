@@ -19,5 +19,5 @@ class Goods extends Model
     public function getSkuInfo($goodsId){
         return $this->get($goodsId);
     }
-
+     
 }
