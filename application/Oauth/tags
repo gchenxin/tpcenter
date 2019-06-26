@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Oauth	Oauth.php	/^class Oauth$/;"	c
+__construct	Oauth.php	/^    public function __construct(Request $request)$/;"	f
+auth_type	Oauth.php	/^        $this->auth_type = isset($param['auth_type']) ? $param['auth_type'] : null;$/;"	v
+auth_type	Oauth.php	/^    private $auth_type;$/;"	v
+checkSign	Oauth.php	/^    public function checkSign(){$/;"	f
+checkUserToken	Oauth.php	/^    public function checkUserToken(){$/;"	f
+clientInfo	Oauth.php	/^        $clientInfo = model('OauthClient')->checkClient($this->client_id,$this->client_key);$/;"	v
+client_id	Oauth.php	/^        $this->client_id = isset($param['client_id']) ? $param['client_id'] : null;$/;"	v
+client_id	Oauth.php	/^    private $client_id;$/;"	v
+client_key	Oauth.php	/^        $this->client_key = isset($param['client_key']) ? $param['client_key'] : null;$/;"	v
+client_key	Oauth.php	/^    private $client_key;$/;"	v
+encryptStr	Oauth.php	/^        $encryptStr = '';$/;"	v
+expire	Oauth.php	/^            $expire = date('Y-m-d H:i:s',time() + 7200);$/;"	v
+generateToken	Oauth.php	/^    public function generateToken($userId, $scope){$/;"	f
+getAccessToken	Oauth.php	/^    public function getAccessToken(){$/;"	f
+getAuthType	Oauth.php	/^    public function getAuthType()$/;"	f
+getClientId	Oauth.php	/^    public function getClientId()$/;"	f
+key	Oauth.php	/^        foreach($param as $key=>$value){$/;"	v
+param	Oauth.php	/^        $param = $request->param();$/;"	v
+param	Oauth.php	/^        $param = request()->param();$/;"	v
+refreshToken	Oauth.php	/^            $refreshToken = md5($token);$/;"	v
+refreshToken	Oauth.php	/^    public function refreshToken(){$/;"	f
+refresh_token	Oauth.php	/^        $this->refresh_token = isset($param['refresh_token']) ? $param['refresh_token'] : null;$/;"	v
+refresh_token	Oauth.php	/^    private $refresh_token;$/;"	v
+result	Oauth.php	/^            $result = model('OauthAccess')->setAccessToken($this->client_id,$userId,$token,$scope,$expire);$/;"	v
+result	Oauth.php	/^            $result = model('OauthRefresh')->setRefreshToken($this->client_id,$userId,$refreshToken,$scope);$/;"	v
+sign	Oauth.php	/^        $this->sign = isset($param['sign']) ? $param['sign'] : null;$/;"	v
+sign	Oauth.php	/^        return $this->sign == \\md5($encryptStr);$/;"	v
+sign	Oauth.php	/^    private $sign;$/;"	v
+timestamp	Oauth.php	/^        $this->timestamp = isset($param['timestamp']) ? $param['timestamp'] : null;$/;"	v
+timestamp	Oauth.php	/^    private $timestamp;$/;"	v
+token	Oauth.php	/^            $token = \\md5($this->client_id . $this->client_key . date('YmdHis',time()) . mt_rand(1,999));$/;"	v
+token	Oauth.php	/^        $this->token = isset($param['token']) ? $param['token'] : null;$/;"	v
+token	Oauth.php	/^    private $token;$/;"	v

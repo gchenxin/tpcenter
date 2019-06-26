@@ -25,6 +25,7 @@ class Order extends Model{
     }
 
     public function addOrder($orderData){
-    	
+	$orderData = json_decode($orderData,true);
+				
     }
 }

@@ -9,4 +9,6 @@ class OrderLog extends Model{
     public function __construct(){
     	parent::__construct();
     }
+
+    public function addOrderLog(){}
 }

@@ -1,0 +1,306 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Ajax	Ajax/Ajax.php	/^class Ajax{$/;"	c
+AjaxFacade	Facade/AjaxFacade.php	/^class AjaxFacade extends Facade{$/;"	c
+Auth	http/middleware/Auth.php	/^class Auth$/;"	c
+AuthTokenFacade	Facade/AuthTokenFacade.php	/^class AuthTokenFacade extends Facade$/;"	c
+CartShop	common/model/CartShop.php	/^class CartShop extends Model {$/;"	c
+Cartshop	index/controller/Cartshop.php	/^class Cartshop extends Controller {$/;"	c
+Check	http/middleware/Check.php	/^class Check$/;"	c
+ERROR_ACCESS	common.php	/^define('ERROR_ACCESS',2);$/;"	d
+ERROR_DENY	common.php	/^define('ERROR_DENY',6);$/;"	d
+ERROR_FAIL	common.php	/^define('ERROR_FAIL',7);$/;"	d
+ERROR_MESSAGE	common.php	/^    $ERROR_MESSAGE = [$/;"	v
+ERROR_PARAM	common.php	/^define('ERROR_PARAM',5);$/;"	d
+ERROR_REFRESH	common.php	/^define('ERROR_REFRESH',4);$/;"	d
+ERROR_SIGN	common.php	/^define('ERROR_SIGN',3);$/;"	d
+ERROR_VERIFY	common.php	/^define('ERROR_VERIFY',8);$/;"	d
+Goods	common/model/Goods.php	/^class Goods extends Model$/;"	c
+IfUserExists	common/model/CartShop.php	/^        $IfUserExists = model('User')->checkUser($userId);$/;"	v
+Index	index/controller/Index.php	/^class Index extends Controller$/;"	c
+Login	index/controller/Login.php	/^class Login extends Controller$/;"	c
+NOT_INVALID_CLIENT	common.php	/^define('NOT_INVALID_CLIENT',1);$/;"	d
+Oauth	Oauth/Oauth.php	/^class Oauth$/;"	c
+OauthAccess	common/model/OauthAccess.php	/^class OauthAccess extends Model$/;"	c
+OauthClient	common/model/OauthClient.php	/^class OauthClient extends Model$/;"	c
+OauthRefresh	common/model/OauthRefresh.php	/^class OauthRefresh extends Model$/;"	c
+Oauthtoken	index/controller/Oauthtoken.php	/^class Oauthtoken extends Controller$/;"	c
+Order	common/model/Order.php	/^class Order extends Model{$/;"	c
+Order	index/controller/Order.php	/^class Order extends Controller$/;"	c
+OrderItem	common/model/OrderItem.php	/^class OrderItem extends Model{$/;"	c
+OrderLog	common/model/OrderLog.php	/^class OrderLog extends Model{$/;"	c
+PayRecord	common/model/PayRecord.php	/^class PayRecord extends Model{$/;"	c
+Product	common/model/Product.php	/^class Product extends Model$/;"	c
+Product	index/controller/Product.php	/^class Product extends Controller$/;"	c
+ProductClass	common/model/ProductClass.php	/^class ProductClass extends Model{$/;"	c
+ReceiveAddress	common/model/ReceiverAddress.php	/^class ReceiveAddress extends Model{$/;"	c
+Register	index/controller/Register.php	/^class Register extends Controller{$/;"	c
+Stock	common/model/Stock.php	/^class Stock extends Model{$/;"	c
+User	common/model/User.php	/^class User extends Model$/;"	c
+User	index/controller/User.php	/^class User extends Controller{$/;"	c
+UserValidate	common/validate/UserValidate.php	/^class UserValidate extends Validate{$/;"	c
+WechatBLL	common/logic/WechatBLL.php	/^class WechatBLL {$/;"	c
+__construct	Ajax/Ajax.php	/^    public function __construct(){$/;"	f
+__construct	Oauth/Oauth.php	/^    public function __construct(Request $request)$/;"	f
+__construct	common/logic/WechatBLL.php	/^    public function __construct() {$/;"	f
+__construct	common/model/CartShop.php	/^    public function __construct($data = []) {$/;"	f
+__construct	common/model/Goods.php	/^    public function __construct($data = []) {$/;"	f
+__construct	common/model/OauthAccess.php	/^    public function __construct($data = [])$/;"	f
+__construct	common/model/OauthClient.php	/^    public function __construct($data = [])$/;"	f
+__construct	common/model/OauthRefresh.php	/^    public function __construct($data = [])$/;"	f
+__construct	common/model/Order.php	/^    public function __construct(){$/;"	f
+__construct	common/model/OrderItem.php	/^    public function __construct(){$/;"	f
+__construct	common/model/OrderLog.php	/^    public function __construct(){$/;"	f
+__construct	common/model/PayRecord.php	/^    public function __construct(){$/;"	f
+__construct	common/model/Product.php	/^    public function __construct($data = []) {$/;"	f
+__construct	common/model/ProductClass.php	/^	public function __construct(){$/;"	f
+__construct	common/model/ReceiverAddress.php	/^    public function __construct(){$/;"	f
+__construct	common/model/Stock.php	/^    public function __construct(){$/;"	f
+__construct	common/model/User.php	/^    public function __construct($data = []) {$/;"	f
+active	index/controller/User.php	/^    public function active($userId){$/;"	f
+addData	common/model/CartShop.php	/^        $addData = [];$/;"	v
+addItem	common/model/Product.php	/^    public function addItem($item){$/;"	f
+addItem	common/model/User.php	/^    public function addItem($mobile,$password){$/;"	f
+addItems	common/model/CartShop.php	/^    public function addItems($userId,$items){$/;"	f
+addOrder	common/model/Order.php	/^    public function addOrder($orderData){$/;"	f
+addOrderLog	common/model/OrderLog.php	/^    public function addOrderLog(){}$/;"	f
+allowed_origins	http/middleware/Check.php	/^        $allowed_origins = config('auth.allow_origin');$/;"	v
+app_id	common/logic/WechatBLL.php	/^        $this->app_id = $config['app_id'];$/;"	v
+app_id	common/logic/WechatBLL.php	/^    private $app_id;$/;"	v
+app_key	common/logic/WechatBLL.php	/^        $this->app_key = $config['app_secret'];$/;"	v
+app_key	common/logic/WechatBLL.php	/^    private $app_key;$/;"	v
+auth_type	Oauth/Oauth.php	/^        $this->auth_type = isset($param['auth_type']) ? $param['auth_type'] : null;$/;"	v
+auth_type	Oauth/Oauth.php	/^    private $auth_type;$/;"	v
+authorize	common/model/User.php	/^    public function authorize($userId,$password){$/;"	f
+autoWriteTimestamp	common/model/ProductClass.php	/^		$this->autoWriteTimestamp = false;$/;"	v
+autoWriteTimestamp	common/model/User.php	/^	$this->autoWriteTimestamp = false;$/;"	v
+cartInfo	common/model/CartShop.php	/^            $cartInfo = $this->where($where)->find();$/;"	v
+cartInfo	common/model/CartShop.php	/^        $cartInfo = $this->get($cartId);$/;"	v
+cartShopList	index/controller/Cartshop.php	/^            $cartShopList = model('CartShop')->getItemsCount($request->userId);$/;"	v
+cartShopList	index/controller/Cartshop.php	/^            $cartShopList = model('CartShop')->getList($request->userId);$/;"	v
+cartShopList	index/controller/Cartshop.php	/^            $cartShopList = model('CartShop')->remove($cartId);$/;"	v
+check	common/model/OauthRefresh.php	/^    public function check($refresh,$clientId,$clientKey){$/;"	f
+checkClient	common/model/OauthClient.php	/^    public function checkClient($clientId,$clientKey){$/;"	f
+checkGoods	common/model/Goods.php	/^    public function checkGoods($goodsId){$/;"	f
+checkParamHandler	http/middleware/Check.php	/^    public function checkParamHandler(&$request){$/;"	f
+checkProduct	common/model/Product.php	/^    public function checkProduct($productId){$/;"	f
+checkSign	Oauth/Oauth.php	/^    public function checkSign(){$/;"	f
+checkToken	common/model/OauthAccess.php	/^    public function checkToken($token){$/;"	f
+checkTokenHandler	http/middleware/Auth.php	/^    public function checkTokenHandler(){$/;"	f
+checkUser	common/model/User.php	/^    public function checkUser($userId){$/;"	f
+checkUserToken	Oauth/Oauth.php	/^    public function checkUserToken(){$/;"	f
+classList	index/controller/Product.php	/^            $classList = model('ProductClass')->getClassList();$/;"	v
+className	index/controller/Product.php	/^	$className = input('className');$/;"	v
+clientInfo	Oauth/Oauth.php	/^        $clientInfo = model('OauthClient')->checkClient($this->client_id,$this->client_key);$/;"	v
+client_id	Oauth/Oauth.php	/^        $this->client_id = isset($param['client_id']) ? $param['client_id'] : null;$/;"	v
+client_id	Oauth/Oauth.php	/^    private $client_id;$/;"	v
+client_key	Oauth/Oauth.php	/^        $this->client_key = isset($param['client_key']) ? $param['client_key'] : null;$/;"	v
+client_key	Oauth/Oauth.php	/^    private $client_key;$/;"	v
+config	common/logic/WechatBLL.php	/^        $config = config('wechat');$/;"	v
+create	index/controller/Cartshop.php	/^    public function create(Request $request) {$/;"	f
+create	index/controller/Order.php	/^    public function create()$/;"	f
+create	index/controller/Product.php	/^    public function create()$/;"	f
+create	index/controller/Register.php	/^    public function create($mobile,$password){$/;"	f
+create	index/controller/User.php	/^    public function create($mobile,$password){$/;"	f
+current	Ajax/Ajax.php	/^        $this->current = 1;$/;"	v
+current	Ajax/Ajax.php	/^    public $current;$/;"	v
+data	Ajax/Ajax.php	/^        $this->data = [];$/;"	v
+data	Ajax/Ajax.php	/^        $this->data = empty($data) ? $this->data : $data;$/;"	v
+data	Ajax/Ajax.php	/^    public $data;$/;"	v
+data	common/model/OauthAccess.php	/^        $data = [$/;"	v
+data	common/model/OauthRefresh.php	/^        $data = [$/;"	v
+data	common/model/User.php	/^        $data = [$/;"	v
+dataReference	common/model/ProductClass.php	/^		$dataReference = [];$/;"	v
+delete	index/controller/Cartshop.php	/^    public function delete($cartId) {$/;"	f
+delete	index/controller/Order.php	/^    public function delete($id)$/;"	f
+delete	index/controller/Product.php	/^    public function delete($id)$/;"	f
+deleted	index/controller/User.php	/^    public function deleted($userId){$/;"	f
+disable	common/model/User.php	/^    public function disable($userId,$value){$/;"	f
+disable	index/controller/User.php	/^    public function disable($userId){$/;"	f
+edit	index/controller/Order.php	/^    public function edit($id)$/;"	f
+edit	index/controller/Product.php	/^    public function edit($id)$/;"	f
+encryptStr	Oauth/Oauth.php	/^        $encryptStr = '';$/;"	v
+error	Ajax/Ajax.php	/^    public function error($code = 1,$message = 'operation failed!'){$/;"	f
+expire	Oauth/Oauth.php	/^            $expire = date('Y-m-d H:i:s',time() + 7200);$/;"	v
+failException	common/validate/UserValidate.php	/^	protected $failException = true;$/;"	v
+field	common/model/User.php	/^    public function getUserFields($userId, $field = '*'){$/;"	v
+generateToken	Oauth/Oauth.php	/^    public function generateToken($userId, $scope){$/;"	f
+generateTreeStruct	common/model/ProductClass.php	/^	public function generateTreeStruct($data,$child = 'child'){$/;"	f
+getAccessToken	Oauth/Oauth.php	/^    public function getAccessToken(){$/;"	f
+getAccessToken	index/controller/Oauthtoken.php	/^    public function getAccessToken(){$/;"	f
+getAddressInfo	common/model/ReceiverAddress.php	/^    public function getAddressInfo($aId){$/;"	f
+getAuthType	Oauth/Oauth.php	/^    public function getAuthType()$/;"	f
+getAuthorizeUrl	common/logic/WechatBLL.php	/^    public function getAuthorizeUrl($scope = 'snsapi_userinfo'){$/;"	f
+getCartShopItemsCount	index/controller/Cartshop.php	/^    public function getCartShopItemsCount(Request $request) {$/;"	f
+getClassList	common/model/ProductClass.php	/^	public function getClassList(){$/;"	f
+getClientId	Oauth/Oauth.php	/^    public function getClientId()$/;"	f
+getItemsCount	common/model/CartShop.php	/^    public function getItemsCount($userId){$/;"	f
+getList	common/model/CartShop.php	/^    public function getList($userId){$/;"	f
+getList	index/controller/Cartshop.php	/^    public function getList(Request $request) {$/;"	f
+getOrderInfo	common/model/Order.php	/^    public function getOrderInfo($orderId){$/;"	f
+getProductClass	index/controller/Product.php	/^    public function getProductClass(){$/;"	f
+getProductInfo	common/model/Product.php	/^    public function getProductInfo($pId){$/;"	f
+getProductList	common/model/Product.php	/^    public function getProductList($keywords,$classId,$lastest,$orderBy,$priceRange,$page,$limit){$/;"	f
+getProductList	index/controller/Product.php	/^    public function getProductList(){Request $request}$/;"	f
+getProductProperty	common/model/Product.php	/^    public function getProductProperty($productId){$/;"	f
+getSkuInfo	common/model/Goods.php	/^    public function getSkuInfo($goodsId){$/;"	f
+getSkuInfo	common/model/Stock.php	/^    public function getSkuInfo($goodsId,$productId){$/;"	f
+getSkuInfo	index/controller/Product.php	/^    public function getSkuInfo($goodsId,$productId){$/;"	f
+getUserFields	common/model/User.php	/^    public function getUserFields($userId, $field = '*'){$/;"	f
+getUserFieldsByMobile	common/model/User.php	/^    public function getUserFieldsByMobile($mobile){$/;"	f
+getUserInfo	common/model/User.php	/^    public function getUserInfo($userId){$/;"	f
+get_access_token	common/logic/WechatBLL.php	/^    public function get_access_token($code)$/;"	f
+get_user_info	common/logic/WechatBLL.php	/^    public function get_user_info($access_token, $open_id)$/;"	f
+gzhEntrance	index/controller/Login.php	/^    public function gzhEntrance(){$/;"	f
+handle	http/middleware/Auth.php	/^    public function handle($request, \\Closure $next)$/;"	f
+handle	http/middleware/Check.php	/^    public function handle($request, \\Closure $next)$/;"	f
+ifExists	common/model/OauthClient.php	/^        $ifExists = $this->where($where)->find();$/;"	v
+index	index/controller/Index.php	/^    public function index()$/;"	f
+index	index/controller/Order.php	/^    public function index()$/;"	f
+info	common/model/ReceiverAddress.php	/^	$info = $this->alias('ra')->join('SYS_Area p','ra.ProvinceId=p.id')$/;"	v
+info	common/model/ReceiverAddress.php	/^	if($info)	$info = $info->toArray();$/;"	v
+info	index/controller/Product.php	/^            $info = model('Stock')->getSkuInfo($goodsId,$productId);$/;"	v
+info_data	common/logic/WechatBLL.php	/^            $info_data = curlPost($info_url);$/;"	v
+info_url	common/logic/WechatBLL.php	/^            $info_url = "https:\/\/api.weixin.qq.com\/sns\/userinfo?access_token={$access_token}&openid={$open_id}&lang=zh_CN";$/;"	v
+item	common/model/User.php	/^    	$item = json_decode($item,true);$/;"	v
+items	common/model/CartShop.php	/^        $items = json_decode($items,true);$/;"	v
+key	Oauth/Oauth.php	/^        foreach($param as $key=>$value){$/;"	v
+key	common/model/ProductClass.php	/^		foreach($list as $key=>$value){$/;"	v
+keywords	index/controller/Product.php	/^	$keywords = input('keywords');$/;"	v
+last	Ajax/Ajax.php	/^        $this->last = 1;$/;"	v
+last	Ajax/Ajax.php	/^    public $last;$/;"	v
+lastest	index/controller/Product.php	/^	$lastest = input('lastest');$/;"	v
+list	common/model/CartShop.php	/^        $list =  $this->where($where)->value('SUM(BuyCount) BuyCount');$/;"	v
+list	common/model/CartShop.php	/^        $list = $this->where($where)->select();$/;"	v
+list	common/model/Product.php	/^	$list = $this->alias('p')->join('PRD_Class c','p.classId=c.Id')->where($where)->whereStr($whereStr)->fields('p.*,c.className')->order($sort)->paginate();$/;"	v
+list	common/model/ProductClass.php	/^		$list = $this->generateTreeStruct($list);$/;"	v
+list	common/model/ProductClass.php	/^		$list = $this->select();$/;"	v
+list	common/model/ProductClass.php	/^		$list = array_combine(array_column($data,'id'),$data);$/;"	v
+logic	index/controller/Login.php	/^        $logic = logic('WechatBLL');$/;"	v
+mch_id	common/logic/WechatBLL.php	/^        $this->mch_id = $config['mch_id'];$/;"	v
+mch_id	common/logic/WechatBLL.php	/^    private $mch_id;$/;"	v
+message	Ajax/Ajax.php	/^        $this->message = 'success!';$/;"	v
+message	Ajax/Ajax.php	/^        $this->message = empty($message) ? $this->message : $message;$/;"	v
+message	Ajax/Ajax.php	/^    public $message;$/;"	v
+message	common/validate/UserValidate.php	/^	protected $message = [$/;"	v
+middleware	index/controller/Index.php	/^\/\/    protected $middleware = ['Check'];$/;"	v
+middleware	index/controller/Login.php	/^    protected $middleware = ['Check'];$/;"	v
+modify	index/controller/User.php	/^    public function modify($userId,$item){$/;"	f
+modifyItem	common/model/User.php	/^    public function modifyItem($userId,$item){$/;"	f
+oauthLogin	index/controller/Oauthtoken.php	/^    public function oauthLogin(){$/;"	f
+orderData	common/model/Order.php	/^	$orderData = json_decode($orderData,true);$/;"	v
+orderInfo	common/model/Order.php	/^	$orderInfo = $this->getOrderInfo($orderInfo);$/;"	v
+param	Oauth/Oauth.php	/^        $param = $request->param();$/;"	v
+param	Oauth/Oauth.php	/^        $param = request()->param();$/;"	v
+parentId	common/model/ProductClass.php	/^			$parentId = $value['Parentid'];$/;"	v
+password	common/model/User.php	/^	$password = password_hash(substr(md5($password),10,15),PASSWORD_BCRYPT);$/;"	v
+payNotify	common/model/Order.php	/^    public function payNotify($orderId,$payMent,$payMoney){$/;"	f
+perPage	Ajax/Ajax.php	/^        $this->perPage = 0;$/;"	v
+perPage	Ajax/Ajax.php	/^    public $perPage;$/;"	v
+priceArr	common/model/Product.php	/^		$priceArr = explode('-',$priceRange);$/;"	v
+priceRange	index/controller/Product.php	/^	$priceRange = input('priceRange');$/;"	v
+productInfo	common/model/Product.php	/^	$productInfo = $this->getProductInfo($productId);$/;"	v
+productList	index/controller/Product.php	/^	    $productList = model('Product')->getProductList($keywords,$className,$lastest,$priceRange,$request->page,$request->limit);$/;"	v
+property	common/model/Product.php	/^	$property = json_decode($productInfo['props'],true);$/;"	v
+read	index/controller/Order.php	/^    public function read($id)$/;"	f
+read	index/controller/Product.php	/^    public function read($id)$/;"	f
+recovery	index/controller/User.php	/^    public function recovery($userId,0){$/;"	f
+recycle	common/model/User.php	/^    public function recycle($userId,$value){$/;"	f
+redirect_url	common/logic/WechatBLL.php	/^        $this->redirect_url = $config['redirect_url'];$/;"	v
+redirect_url	common/logic/WechatBLL.php	/^    private $redirect_url;$/;"	v
+refreshToken	Oauth/Oauth.php	/^            $refreshToken = md5($token);$/;"	v
+refreshToken	Oauth/Oauth.php	/^    public function refreshToken(){$/;"	f
+refreshToken	index/controller/Oauthtoken.php	/^    public function refreshToken(){$/;"	f
+refresh_token	Oauth/Oauth.php	/^        $this->refresh_token = isset($param['refresh_token']) ? $param['refresh_token'] : null;$/;"	v
+refresh_token	Oauth/Oauth.php	/^    private $refresh_token;$/;"	v
+remainStock	common/model/Stock.php	/^	$remainStock = $this->alias('s')->join('PRD_Product p','s.ProductId=p.id')$/;"	v
+remainStock	common/model/Stock.php	/^	if($remainStock)	$remainStock = $remainStock->toArray();$/;"	v
+remove	common/model/CartShop.php	/^    public function remove($cartId){$/;"	f
+removeAccessToken	common/model/OauthAccess.php	/^    protected function removeAccessToken($clientId){$/;"	f
+removeRefreshToken	common/model/OauthRefresh.php	/^    public function removeRefreshToken($clientId){$/;"	f
+result	Oauth/Oauth.php	/^            $result = model('OauthAccess')->setAccessToken($this->client_id,$userId,$token,$scope,$expire);$/;"	v
+result	Oauth/Oauth.php	/^            $result = model('OauthRefresh')->setRefreshToken($this->client_id,$userId,$refreshToken,$scope);$/;"	v
+result	common/model/CartShop.php	/^            $result = $this->saveAll($addData);$/;"	v
+result	common/model/CartShop.php	/^            $result = $this->saveAll($update);$/;"	v
+result	common/model/OauthAccess.php	/^        $result = $this->where($where)->find();$/;"	v
+result	common/model/OauthRefresh.php	/^        $result = $this->alias('rt')->join('oauth_clients c','rt.client_id=c.client_id')->where($where)->find();$/;"	v
+result	common/model/Order.php	/^	$result = $this->where($where)->find();$/;"	v
+result	common/model/Order.php	/^	if($result) $result = $result->toArray();$/;"	v
+result	common/model/User.php	/^	$result = $this->field($field)->get($userId);$/;"	v
+result	common/model/User.php	/^	if($result) $result = $result->toArray();$/;"	v
+result	index/controller/Cartshop.php	/^            $result = model('CartShop')->addItems($request->userId,$request->items);$/;"	v
+result	index/controller/Cartshop.php	/^            $result = model('CartShop')->saveItems($request->cartId,$request->buyCount,$request->isSelect,$request->modify);$/;"	v
+result	index/controller/Oauthtoken.php	/^            $result = Oauth::getAccessToken();$/;"	v
+result	index/controller/Oauthtoken.php	/^            $result = Oauth::refreshToken();$/;"	v
+rules	common/validate/UserValidate.php	/^	protected $rules = [$/;"	v
+save	index/controller/Cartshop.php	/^    public function save(Request $request) {$/;"	f
+save	index/controller/Order.php	/^    public function save(Request $request)$/;"	f
+save	index/controller/Product.php	/^    public function save(Request $request)$/;"	f
+saveItems	common/model/CartShop.php	/^    public function saveItems($cartId,$buyCount,$isSelect,$modify){$/;"	f
+setAccessToken	common/model/OauthAccess.php	/^    public function setAccessToken($clientId,$userId,$token,$scope,$expire){$/;"	f
+setPassword	common/model/User.php	/^    public function setPassword($userId,$password,$newPassword){$/;"	f
+setRefreshToken	common/model/OauthRefresh.php	/^    public function setRefreshToken($clientId,$userId,$refreshToken,$scope){$/;"	f
+sign	Oauth/Oauth.php	/^        $this->sign = isset($param['sign']) ? $param['sign'] : null;$/;"	v
+sign	Oauth/Oauth.php	/^        return $this->sign == \\md5($encryptStr);$/;"	v
+sign	Oauth/Oauth.php	/^    private $sign;$/;"	v
+sort	common/model/Product.php	/^	$sort = 'order';$/;"	v
+sort	common/model/Product.php	/^	if($orderBy)	$sort = $orderBy . ',' . $sort;$/;"	v
+status	Ajax/Ajax.php	/^        $this->status = 0;$/;"	v
+status	Ajax/Ajax.php	/^        $this->status = empty($code) ? $this->status : $code;$/;"	v
+status	Ajax/Ajax.php	/^    public $status;$/;"	v
+success	Ajax/Ajax.php	/^    public function success($data=[],$message=''){$/;"	f
+table	common/model/CartShop.php	/^    protected $table = 'TRD_CartShop';$/;"	v
+table	common/model/Goods.php	/^    protected $table = 'PRD_Goods';$/;"	v
+table	common/model/OauthAccess.php	/^    protected $table = 'oauth_access_tokens';$/;"	v
+table	common/model/OauthClient.php	/^    protected $table = 'oauth_clients';$/;"	v
+table	common/model/OauthRefresh.php	/^    protected $table = 'oauth_refresh_tokens';$/;"	v
+table	common/model/Order.php	/^    protected $table = 'TRD_Order';$/;"	v
+table	common/model/OrderItem.php	/^    protected $table = 'TRD_OrderItem';$/;"	v
+table	common/model/OrderLog.php	/^    protected $table = 'TRD_OrderLog';$/;"	v
+table	common/model/PayRecord.php	/^    protected $table = 'TRD_PayRecord';$/;"	v
+table	common/model/Product.php	/^    protected $table = 'PRD_Product';$/;"	v
+table	common/model/ProductClass.php	/^	protected $table = "PRD_Class";$/;"	v
+table	common/model/ReceiverAddress.php	/^    protected $table='ReceiveAddress';$/;"	v
+table	common/model/Stock.php	/^    protected $table = 'PRD_Stock';$/;"	v
+table	common/model/User.php	/^    protected $table = 'USR_User';$/;"	v
+template_info	common/logic/WechatBLL.php	/^        $this->template_info = $config['template_info'];$/;"	v
+template_info	common/logic/WechatBLL.php	/^    private $template_info;$/;"	v
+test	index/controller/Index.php	/^        $test = [$/;"	v
+test	index/controller/Index.php	/^    public function test($name = 'ThinkPHP5')$/;"	f
+throwException	common.php	/^function throwException($code){$/;"	f
+timestamp	Oauth/Oauth.php	/^        $this->timestamp = isset($param['timestamp']) ? $param['timestamp'] : null;$/;"	v
+timestamp	Oauth/Oauth.php	/^    private $timestamp;$/;"	v
+toJson	Ajax/Ajax.php	/^    public function toJson(){$/;"	f
+token	Oauth/Oauth.php	/^            $token = \\md5($this->client_id . $this->client_key . date('YmdHis',time()) . mt_rand(1,999));$/;"	v
+token	Oauth/Oauth.php	/^        $this->token = isset($param['token']) ? $param['token'] : null;$/;"	v
+token	Oauth/Oauth.php	/^    private $token;$/;"	v
+token_data	common/logic/WechatBLL.php	/^        $token_data = curlPost($token_url);$/;"	v
+token_data	index/controller/Login.php	/^        $token_data = curlPost($token_url);$/;"	v
+token_url	common/logic/WechatBLL.php	/^        $token_url = "https:\/\/api.weixin.qq.com\/sns\/oauth2\/access_token?appid={$this->app_id}&secret={$this->app_key}&code={$code}&grant_type=authorization_code";$/;"	v
+token_url	index/controller/Login.php	/^        $token_url = $logic->getAuthorizeUrl('snsapi_base');$/;"	v
+total	Ajax/Ajax.php	/^        $this->total = 0;$/;"	v
+total	Ajax/Ajax.php	/^    public $total;$/;"	v
+update	common/model/CartShop.php	/^        $update = [];$/;"	v
+update	index/controller/Order.php	/^    public function update(Request $request, $id)$/;"	f
+update	index/controller/Product.php	/^    public function update(Request $request, $id)$/;"	f
+userInfo	common/model/User.php	/^	$userInfo = $this->getUserFields($userId,'id,Username,Usersex,Useremail,Realname');$/;"	v
+userInfo	common/model/User.php	/^	$userInfo = $this->getUserInfo($userId);$/;"	v
+userInfo	common/model/User.php	/^	$userInfo = array_merge($userInfo,$item);$/;"	v
+userInfo	common/model/User.php	/^    	$userInfo = $this->getUserFields($userId);$/;"	v
+userInfo	common/model/User.php	/^    	$userInfo = $this->getUserInfo($userId);$/;"	v
+userInfo	index/controller/Login.php	/^            $userInfo = json_decode($token_data, TRUE);$/;"	v
+userIntId	index/controller/Register.php	/^            $userIntId = model('User')->addItem($mobile,$password);$/;"	v
+userIntId	index/controller/User.php	/^            $userIntId = model('User')->addItem($mobile,$password);$/;"	v
+userModId	index/controller/User.php	/^            $userModId = model('User')->disable($userId,0);$/;"	v
+userModId	index/controller/User.php	/^            $userModId = model('User')->disable($userId,1);$/;"	v
+userModId	index/controller/User.php	/^            $userModId = model('User')->modifyItem($userId,$item);$/;"	v
+userModId	index/controller/User.php	/^            $userModId = model('User')->recycle($userId,$item);$/;"	v
+userModId	index/controller/User.php	/^            $userModId = model('User')->recycle($userId,1);$/;"	v
+value	common/model/ProductClass.php	/^			$value = $value->toArray();$/;"	v
+wechatUserInfo	common/logic/WechatBLL.php	/^                $wechatUserInfo = json_decode($info_data, TRUE);$/;"	v
+wechatUserInfo	common/logic/WechatBLL.php	/^            $wechatUserInfo=[];$/;"	v
+whereStr	common/model/Product.php	/^	$whereStr = '1=1';$/;"	v
