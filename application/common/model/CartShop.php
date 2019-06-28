@@ -72,6 +72,16 @@ class CartShop extends Model {
         return $list;
     }
 
+    /**
+	* @Brand
+	*
+	* @param $cartId
+	* @param $buyCount
+	* @param $isSelect
+	* @param $modify 商品数量增加/设置为某值
+	*
+	* @return 
+     */
     public function saveItems($cartId,$buyCount,$isSelect,$modify){
         $cartInfo = $this->get($cartId);
         if(!$cartInfo){
@@ -91,5 +101,9 @@ class CartShop extends Model {
 
     public function remove($cartId){
         return $this->destroy($cartId);
+    }
+
+    public function clear($userId){
+	return $this->where('userId',$userId)->delete();
     }
 }
