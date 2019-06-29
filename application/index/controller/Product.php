@@ -12,7 +12,7 @@ class Product extends Controller
      *
      * @return \think\Response
      */
-    public function getProductList(){Request $request}
+    public function getProductList(Request $request)
     {
 	$keywords = input('keywords');
 	$className = input('className');
