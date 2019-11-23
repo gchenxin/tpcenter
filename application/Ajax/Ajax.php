@@ -43,7 +43,7 @@ class Ajax{
     }
 
     public function toJson(){
-        return json($this);
+        return app('app\common\logic\EncryptRSA')->decrypt(json($this));
     }
 
 }

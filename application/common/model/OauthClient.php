@@ -19,10 +19,11 @@ class OauthClient extends Model
         parent::__construct($data);
     }
 
-    public function checkClient($clientId,$clientKey){
+    public function checkClient($clientId,$clientKey,$grantType = 'authorization_code'){
         if(!$clientId || !$clientKey) return null;
         $where['client_id'] = $clientId;
         $where['client_secret'] = $clientKey;
+        $where['grant_types'] = $grantType;
         $where['status'] = 1;
         $ifExists = $this->where($where)->find();
         return $ifExists;

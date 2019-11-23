@@ -58,7 +58,7 @@ class Oauth
      */
     public function getAccessToken(){
         //验证是否是授权的clientId
-        $clientInfo = model('OauthClient')->checkClient($this->client_id,$this->client_key);
+        $clientInfo = model('OauthClient')->checkClient($this->client_id,$this->client_key,$this->auth_type);
         if($clientInfo){
             //验证签名
             if(!$this->checkSign()){

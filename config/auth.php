@@ -15,7 +15,7 @@ return [
     'inter_auth'    =>  false,
     //不需要认证的接口列表，只有在开启了接口认证才有用,控制器命名全小写
     'ignore_list'   =>  [
-//        'index/index/index',
+        'index/index/index',
         'index/oauthtoken/getAccessToken',
         'index/oauthtoken/refreshToken',
     ],
@@ -23,6 +23,10 @@ return [
     'auth_middleware'   =>  'Auth',
     //跨域处理,允许访问的地址列表
     'allow_origin'  =>  [
-        'http://src.com:9002'
+        'http://src.com:9002',
+        'http://web.com'
     ],
+    //是否开启非对称加密
+    'rsa_encrypt' => false,
+    'rsa_cert_path' => 'Cert/rsa_private_key.pem',
 ];

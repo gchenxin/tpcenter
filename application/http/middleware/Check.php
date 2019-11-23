@@ -2,6 +2,9 @@
 
 namespace app\http\middleware;
 
+use think\Loader;
+use Ajax;
+
 class Check
 {
     public function handle($request, \Closure $next)
@@ -15,11 +18,22 @@ class Check
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
+        //非对称解密
+        $this->decryptRSA($request);
+
         //参数检验
         $this->checkParamHandler($request);
 
         return $next($request);
 
+    }
+
+    /**
+     * openssl非对称加密解密
+     * @param $request
+     */
+    public function decryptRSA(&$request){
+        //app('app\common\logic\EncryptRSA')->decrypt($request->params);
     }
 
     public function checkParamHandler(&$request){

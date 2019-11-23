@@ -33,6 +33,8 @@ define('ERROR_DENY',6);
 define('ERROR_FAIL',7);
 //验证失败
 define('ERROR_VERIFY',8);
+//缺少支持,检查接口、php扩展等
+define('ERROR_NO_SUPPORT',9);
 
 
 /**
@@ -50,7 +52,8 @@ function throwException($code){
         'params invalid! - 参数格式错误！',
         'operation denied! - 拒绝执行！',
         'operation failed! - 操作失败！',
-	'verify failed! - 验证失败！'
+	    'verify failed! - 验证失败！',
+        'no support! - 请检查相关组件！'
     ];
     exception($ERROR_MESSAGE[$code],$code);
 }
@@ -103,6 +106,5 @@ function getRedis(){
     $redis = new \Redis();
     $redis->connect($config['host'], $config['port']);
     $redis->auth($config['password']);
-
     return $redis;
 }
