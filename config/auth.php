@@ -24,9 +24,11 @@ return [
     //跨域处理,允许访问的地址列表
     'allow_origin'  =>  [
         'http://src.com:9002',
-        'http://web.com'
+        'http://web.com',
+        'http://cfree.com'
     ],
     //是否开启非对称加密
-    'rsa_encrypt' => false,
-    'rsa_cert_path' => 'Cert/rsa_private_key.pem',
+    'rsa_encrypt' => true,
+    'rsa_public_path' => 'Cert/rsa_public_key.pem',
+    'rsa_private_path' => 'Cert/rsa_private_key.pem',
 ];

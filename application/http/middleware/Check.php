@@ -33,10 +33,16 @@ class Check
      * @param $request
      */
     public function decryptRSA(&$request){
-        //app('app\common\logic\EncryptRSA')->decrypt($request->params);
+//        $request->params = app('Encrypt')->decrypt($request->params);
     }
 
     public function checkParamHandler(&$request){
+        $request->params = json_decode($request->params, true);
+        if(is_array($request->params)){
+            foreach($request->params as $key=>$value){
+                $request->$key = $value;
+            }
+        }
         $request->page = empty($request->page) ? 1 : $request->page;
         $request->limit = empty($request->limit) ? 20 : $request->limit;
     }

@@ -79,6 +79,7 @@ class Response
      */
     public function __construct($data = '', $code = 200, array $header = [], $options = [])
     {
+        $data = app('Encrypt')->encrypt($data);
         $this->data($data);
 
         if (!empty($options)) {

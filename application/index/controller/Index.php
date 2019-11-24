@@ -2,7 +2,6 @@
 namespace app\index\controller;
 
 use Ajax;
-use think\App;
 use think\Controller;
 
 class Index extends Controller
@@ -11,7 +10,7 @@ class Index extends Controller
     public function index()
     {
         $arr = [];
-        return Ajax::success($arr);
+        return Ajax::success($arr)->toJson();
     }
 
     //不需要验证token的测试方法

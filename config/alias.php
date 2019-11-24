@@ -13,4 +13,5 @@
 return [
     'Ajax'     => \app\Facade\AjaxFacade::class,
     'Oauth'     => \app\Facade\AuthTokenFacade::class,
+    'Encrypt'   => \app\common\logic\EncryptRSA::class,
 ];
