@@ -4,6 +4,8 @@ namespace app\http\middleware;
 
 use Ajax;
 use Oauth;
+use think\exception\ErrorException;
+use think\exception\Exception;
 
 class Auth
 {
@@ -11,6 +13,9 @@ class Auth
     {
         //token验证
         try{
+//            if($request->header('from') != 'fruyu.tbk.app'){
+//                throwException(NOT_INVALID_CLIENT);
+//            }
             if($this->checkTokenHandler()){
                 return $next($request);
             }

@@ -11,7 +11,7 @@ class Check
     {
         //前置中间件
         $allowed_origins = config('auth.allow_origin');
-        if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+        if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins) && !empty($_SERVER['HTTP_REFERER'])) {
             header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
         }
         header('Access-Control-Allow-Credentials: true');
@@ -33,16 +33,17 @@ class Check
      * @param $request
      */
     public function decryptRSA(&$request){
-//        $request->params = app('Encrypt')->decrypt($request->params);
+        $request->params = app('Encrypt')->decrypt($request->params);
     }
 
     public function checkParamHandler(&$request){
-        $request->params = json_decode($request->params, true);
-        if(is_array($request->params)){
-            foreach($request->params as $key=>$value){
+        $params = json_decode($request->params, true);
+        if(is_array($params)){
+            foreach($params as $key=>$value){
                 $request->$key = $value;
             }
         }
+        unset($request->params);
         $request->page = empty($request->page) ? 1 : $request->page;
         $request->limit = empty($request->limit) ? 20 : $request->limit;
     }

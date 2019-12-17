@@ -111,12 +111,14 @@ class Oauth
      * @return bool
      */
     public function checkSign(){
-        return true;
         $param = request()->param();
         unset($param['XDEBUG_SESSION_START']);
         unset($param['sign']);
         unset($param['token']);
         unset($param['refresh_token']);
+        unset($param['params']);
+        unset($param['page']);
+        unset($param['limit']);
         ksort($param);
         $encryptStr = '';
         foreach($param as $key=>$value){
@@ -147,7 +149,7 @@ class Oauth
                 throwException(ERROR_FAIL);
             }
             Db::commit();
-            return ['access_token'=>$token,'refresh_token'=>$refreshToken,'expire'=>$expire];
+            return ['access_token'=>$token,'expire'=>$expire];
         }catch(\Exception $e){
             Db::rollback();
             throwException($e->getCode());

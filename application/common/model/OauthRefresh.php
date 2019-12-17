@@ -19,6 +19,8 @@ class OauthRefresh extends Model
     }
 
     public function setRefreshToken($clientId,$userId,$refreshToken,$scope){
+        //暂不启用refresh token
+        return true;
         $this->removeRefreshToken($clientId);
         $data = [
             'refresh_token' => $refreshToken,
